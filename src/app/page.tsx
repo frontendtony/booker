@@ -4,7 +4,6 @@ const Home = () => {
   return (
     <div className="grid min-h-screen grid-cols-[280px_1fr_1fr]">
       <div className="bg-white pt-4 pl-6">
-        {/* <h2 className="mb-2 font-bold">Sidebar</h2> */}
         <Sidebar />
       </div>
 
