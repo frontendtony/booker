@@ -1,6 +1,6 @@
 "use client";
 
-import { assets } from "@/assets/assets";
+import { logo, qr_code } from "@/assets/assets";
 import Image from "next/image";
 import { Calendar } from "./ui/calendar";
 import { Button } from "./ui/button";
@@ -35,7 +35,7 @@ const Sidebar = () => {
     <div className="flex h-[1024px] flex-col justify-between">
       <div>
         <div className="flex items-center gap-4 pb-6">
-          <Image src={assets.logo} alt="Placeholder logo" />
+          <Image src={logo} alt="Placeholder logo" />
           <h2 className="text-sm font-medium text-[#7C7E87]">
             Garment Makers®
           </h2>
@@ -51,7 +51,7 @@ const Sidebar = () => {
         <div className="mt-10 mr-10 rounded-xl border border-[#E8EAF1]">
           <div className="mt-4 flex flex-col items-center gap-3">
             <h3 className="text-sm font-bold">Share link</h3>
-            <Image src={assets.qr_code} alt="QR code" />
+            <Image src={qr_code} alt="QR code" />
           </div>
 
           <div className="flex gap-4 border-t p-3">
