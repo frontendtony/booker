@@ -32,7 +32,7 @@ const Sidebar = () => {
   };
 
   return (
-    <div className="flex h-[1024px] flex-col justify-between">
+    <div className="flex h-screen overflow-y-auto hide-scrollbar flex-col justify-between">
       <div>
         <div className="flex items-center gap-4 pb-6">
           <Image src={logo} alt="Placeholder logo" />
@@ -84,7 +84,7 @@ const Sidebar = () => {
         )}
       </div>
 
-      <div className="flex flex-col">
+      <div className="flex flex-col mt-20">
         <Button
           variant="ghost"
           className="cursor-pointer justify-start text-sm font-medium text-[#2B2C2F] hover:bg-transparent [&_svg]:text-[#7C7E87]">
