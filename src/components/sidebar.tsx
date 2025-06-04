@@ -1,6 +1,7 @@
 "use client";
 
-import { logo, qr_code } from "@/assets/assets";
+import logo from "../assets/logo.png";
+import qr_code from "../assets/qr_code.png";
 import Image from "next/image";
 import { Calendar } from "./ui/calendar";
 import { Button } from "./ui/button";
@@ -32,7 +33,7 @@ const Sidebar = () => {
   };
 
   return (
-    <div className="flex h-screen overflow-y-auto hide-scrollbar flex-col justify-between">
+    <div className="hide-scrollbar flex h-screen flex-col justify-between overflow-y-auto">
       <div>
         <div className="flex items-center gap-4 pb-6">
           <Image src={logo} alt="Placeholder logo" />
@@ -84,7 +85,7 @@ const Sidebar = () => {
         )}
       </div>
 
-      <div className="flex flex-col mt-20">
+      <div className="mt-20 flex flex-col">
         <Button
           variant="ghost"
           className="cursor-pointer justify-start text-sm font-medium text-[#2B2C2F] hover:bg-transparent [&_svg]:text-[#7C7E87]">
