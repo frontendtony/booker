@@ -1,3 +1,4 @@
+import CentreLayout from "@/components/centreLayout";
 import Sidebar from "@/components/sidebar";
 
 const Home = () => {
@@ -7,8 +8,8 @@ const Home = () => {
         <Sidebar />
       </div>
 
-      <div className="bg-gray-100 p-4">
-        <h2 className="mb-2 font-bold">Main Content</h2>
+      <div className="bg-[#FAFAFC] p-6">
+        <CentreLayout />
       </div>
 
       <div className="bg-white p-4">
