@@ -1,4 +1,4 @@
-interface appointmentListProps {
+interface AppointmentListProps {
   time: string;
   name?: string;
   description?: string;
@@ -12,7 +12,7 @@ const AppointmentList = ({
   description,
   style,
   bgColor,
-}: appointmentListProps) => {
+}: AppointmentListProps) => {
   return (
     <div className="font-geist mt-4 flex items-center gap-3 leading-[100%] font-medium">
       <div className={`h-4 w-1.5 rounded-[3px] ${bgColor}`}></div>
