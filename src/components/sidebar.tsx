@@ -33,7 +33,7 @@ const Sidebar = () => {
   };
 
   return (
-    <div className="hide-scrollbar font-geist flex h-screen flex-col justify-between overflow-y-auto">
+    <div className="font-geist flex h-screen flex-col justify-between">
       <div>
         <div className="flex items-center gap-4 pb-6">
           <Image src={logo} alt="Placeholder logo" />
