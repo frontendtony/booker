@@ -33,7 +33,7 @@ const Sidebar = () => {
   };
 
   return (
-    <div className="hide-scrollbar flex h-screen flex-col justify-between overflow-y-auto">
+    <div className="hide-scrollbar font-geist flex h-screen flex-col justify-between overflow-y-auto">
       <div>
         <div className="flex items-center gap-4 pb-6">
           <Image src={logo} alt="Placeholder logo" />
@@ -44,7 +44,7 @@ const Sidebar = () => {
 
         <Calendar mode="single" selected={date} onSelect={setDate} />
 
-        <Button className="mt-6 cursor-pointer bg-[#FF3F14] text-xs font-medium hover:bg-[#FF3F14]/80">
+        <Button className="mt-6 cursor-pointer rounded-3xl bg-[#FF3F14] text-xs font-medium hover:bg-[#FF3F14]/80">
           {" "}
           <Plus /> Add new appointment <ChevronDown />{" "}
         </Button>

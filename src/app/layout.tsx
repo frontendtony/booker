@@ -1,10 +1,17 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Geist } from "next/font/google";
+import { Geist, Geist_Mono } from "next/font/google";
 
 const geist = Geist({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  variable: "--font-geist",
+  display: "swap",
+});
+
+const geistMono = Geist_Mono({
+  subsets: ["latin"],
+  variable: "--font-geist-mono",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -18,8 +25,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={geist.className}>{children}</body>
+    <html lang="en" className={`${geist.variable} ${geistMono.variable}`}>
+      <body>{children}</body>
     </html>
   );
 }
