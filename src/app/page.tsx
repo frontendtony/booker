@@ -1,4 +1,5 @@
 import CentreLayoutPopulated from "@/components/centreLayoutPopulated";
+import LargeCalendar from "@/components/largeCalendar";
 import Sidebar from "@/components/sidebar";
 
 const Home = () => {
@@ -13,7 +14,7 @@ const Home = () => {
       </div>
 
       <div className="hide-scrollbar h-screen overflow-y-auto bg-white p-4">
-        <h2 className="mb-2 font-bold">Main Content</h2>
+        <LargeCalendar />
       </div>
     </div>
   );
