@@ -14,13 +14,13 @@ const AppointmentList = ({
   bgColor,
 }: AppointmentListProps) => {
   return (
-    <div className="font-geist mt-4 flex items-center gap-3 leading-[100%] font-medium">
-      <div className={`h-4 w-1.5 rounded-[3px] ${bgColor}`}></div>
-      <span className="w-[40px] text-xs text-[#9495A0]">{time}</span>
-      <p className="text-sm">
+    <ul className="font-geist mt-4 flex list-none items-center gap-3 leading-[100%] font-medium">
+      <li className={`h-4 w-1.5 rounded-[3px] ${bgColor}`}></li>
+      <li className="w-[40px] text-xs text-[#9495A0]">{time}</li>
+      <li className="text-sm">
         {name} <span className={`text-[#9495A0] ${style}`}> {description}</span>
-      </p>
-    </div>
+      </li>
+    </ul>
   );
 };
 
