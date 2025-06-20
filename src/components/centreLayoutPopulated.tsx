@@ -133,7 +133,7 @@ const CentreLayoutPopulated = () => {
         </span>
       </div>
 
-      <div className="mt-10 flex items-center justify-between">
+      <div className="mt-10 flex gap-6 items-center justify-between">
         <div className="font-geist flex h-[93px] w-[227px] flex-col justify-between rounded-xl bg-white px-3 py-2.5">
           <span className="text-2xl leading-[100%] font-bold">24</span>
           <p className="text-sm leading-[100%] font-medium">
@@ -141,7 +141,7 @@ const CentreLayoutPopulated = () => {
           </p>
         </div>
 
-        <div className="font-geist mr-10 flex flex-col gap-6">
+        <div className="font-geist flex flex-col gap-6">
           <div className="flex gap-2">
             <svg
               width="20"
