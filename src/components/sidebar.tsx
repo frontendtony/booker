@@ -33,7 +33,7 @@ const Sidebar = () => {
   };
 
   return (
-    <div className="font-geist flex h-screen flex-col justify-between">
+    <div className="font-geist flex h-[100%] flex-col justify-between">
       <div>
         <div className="flex items-center gap-4 pb-6">
           <Image src={logo} alt="Placeholder logo" />
@@ -44,12 +44,12 @@ const Sidebar = () => {
 
         <Calendar mode="single" selected={date} onSelect={setDate} />
 
-        <Button className="mt-6 cursor-pointer rounded-3xl bg-[#FF3F14] text-xs font-medium hover:bg-[#FF3F14]/80">
+        <Button className="mt-6 cursor-pointer rounded-3xl bg-[#FF3F14] w-full text-xs font-medium hover:bg-[#FF3F14]/80">
           {" "}
           <Plus /> Add new appointment <ChevronDown />{" "}
         </Button>
 
-        <div className="mt-10 mr-10 rounded-xl border border-[#E8EAF1]">
+        <div className="mt-10 rounded-xl border border-[#E8EAF1]">
           <div className="mt-4 flex flex-col items-center gap-3">
             <h3 className="text-sm font-bold">Share link</h3>
             <Image src={qr_code} alt="QR code" />
