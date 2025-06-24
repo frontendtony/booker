@@ -12,6 +12,7 @@
     "@preact/signals": "^2.2.0",
     "@radix-ui/react-slot": "^1.2.3",
     "@schedule-x/calendar": "^2.33.0",
+    "@schedule-x/calendar-controls": "^2.34.0",
     "@schedule-x/events-service": "^2.33.0",
     "@schedule-x/react": "^2.33.0",
     "@schedule-x/theme-default": "^2.33.0",
