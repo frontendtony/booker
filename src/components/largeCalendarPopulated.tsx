@@ -8,12 +8,15 @@ import {
   createViewWeek,
 } from "@schedule-x/calendar";
 import { createEventsServicePlugin } from "@schedule-x/events-service";
+import { createCalendarControlsPlugin } from "@schedule-x/calendar-controls";
 
 import "@schedule-x/theme-default/dist/index.css";
 import { useState } from "react";
+import CustomHeader from "./customHeader";
 
 function LargeCalendarPopulated() {
   const eventsService = useState(() => createEventsServicePlugin())[0];
+  const calendarControls = useState(() => createCalendarControlsPlugin())[0];
 
   const calendar = useNextCalendarApp({
     firstDayOfWeek: 0,
@@ -545,7 +548,7 @@ function LargeCalendarPopulated() {
         },
       },
     },
-    plugins: [eventsService],
+    plugins: [eventsService, calendarControls],
     callbacks: {
       onRender: () => {
         eventsService.getAll();
@@ -555,8 +558,14 @@ function LargeCalendarPopulated() {
 
   return (
     <div className="font-geist">
-      <ScheduleXCalendar calendarApp={calendar} />
-      
+      <ScheduleXCalendar
+        calendarApp={calendar}
+        customComponents={{
+          headerContent: () => (
+            <CustomHeader calendarControls={calendarControls} />
+          ),
+        }}
+      />
     </div>
   );
 }
