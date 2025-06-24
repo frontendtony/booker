@@ -161,29 +161,6 @@
   letter-spacing: -2% !important;
 }
 
-.sx__view-selection-selected-item::after {
-  content: "▼";
-  margin-left: 8px;
-  font-size: 12px;
-  color: #666;
-  border-radius: 50px !important;
-}
-
-.sx__range-heading {
-  font-weight: 700 !important;
-  font-size: 14px !important;
-  line-height: 100% !important;
-  letter-spacing: -2% !important;
-}
-
-.sx__calendar-header-content {
-  color: #2b2c2f !important;
-  font-weight: 500 !important;
-  font-size: 12px !important;
-  line-height: 100% !important;
-  letter-spacing: -2% !important;
-}
-
 .sx__week-grid__date.sx__week-grid__date--is-today .sx__week-grid__day-name {
   color: #ff3f14 !important;
   font-weight: 500 !important;
@@ -203,10 +180,4 @@
 
 .sx__date-picker__day--selected button:hover {
   background-color: #ff6b47 !important;
-}
-
-.sx__view-selection-items li:hover {
-  background-color: #ff3f14 !important;
-  transition: all 0.2s ease-in-out !important;
-  color: white !important;
 }
