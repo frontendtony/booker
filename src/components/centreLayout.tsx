@@ -1,6 +1,6 @@
 import Image from "next/image";
 import porch from "../assets/porch.png";
-import { Button } from "./ui/button";
+import { Button } from "./ui/Button";
 import { Plus } from "lucide-react";
 
 const CentreLayout = () => {
@@ -32,7 +32,7 @@ const CentreLayout = () => {
         <p className="w-[203px] text-center text-sm leading-5 font-normal text-[#7C7E87]">
           You have no scheduled appointments at this time
         </p>
-        <Button className="bg-white text-xs leading-[100%] rounded-3xl text-black hover:bg-white cursor-pointer">
+        <Button className="cursor-pointer rounded-3xl bg-white text-xs leading-[100%] text-black hover:bg-white">
           {" "}
           <Plus /> Add new
         </Button>

@@ -1,4 +1,4 @@
-import AppointmentList from "./appointmentList";
+import AppointmentList from "./AppointmentList";
 
 const CentreLayoutPopulated = () => {
   const upcomingAppointments = [
