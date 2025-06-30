@@ -1,4 +1,4 @@
-import CentreLayoutPopulated from "@/components/centreLayoutPopulated";
+import CentreLayoutPopulated from "@/components/CentreLayoutPopulated";
 import Sidebar from "@/components/Sidebar";
 
 const Home = () => {
