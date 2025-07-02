@@ -12,11 +12,14 @@ import { createCalendarControlsPlugin } from "@schedule-x/calendar-controls";
 
 import "@schedule-x/theme-default/dist/index.css";
 import { useState } from "react";
-import CustomHeader from "./customHeader";
+import CustomHeader from "./CustomHeader";
 
 function LargeCalendarPopulated() {
   const eventsService = useState(() => createEventsServicePlugin())[0];
   const calendarControls = useState(() => createCalendarControlsPlugin())[0];
+
+  const [currentDate, setCurrentDate] = useState(new Date());
+  const [currentView, setCurrentView] = useState("day");
 
   const calendar = useNextCalendarApp({
     firstDayOfWeek: 0,
@@ -550,10 +553,15 @@ function LargeCalendarPopulated() {
     },
     plugins: [eventsService, calendarControls],
     callbacks: {
-      onRender: () => {
+      onRender: ({ calendarState: { view } }) => {
+        setCurrentView(view.value);
         eventsService.getAll();
       },
+      onSelectedDateUpdate(date) {
+        setCurrentDate(new Date(date));
+      },
     },
+    selectedDate: currentDate.toISOString().split("T")[0],
   });
 
   return (
@@ -561,9 +569,16 @@ function LargeCalendarPopulated() {
       <ScheduleXCalendar
         calendarApp={calendar}
         customComponents={{
-          headerContent: () => (
-            <CustomHeader calendarControls={calendarControls} />
-          ),
+          headerContent: () => {
+            return (
+              <CustomHeader
+                calendarControls={calendarControls}
+                selectedDate={currentDate.toISOString().split("T")[0]}
+                selectedView={currentView}
+                setSelectedView={setCurrentView}
+              />
+            );
+          },
         }}
       />
     </div>

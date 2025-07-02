@@ -1,6 +1,6 @@
 import { ChevronDown, ChevronUp, Plus } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 type CalendarView = "day" | "week" | "month-grid" | "month-agenda";
 
@@ -9,60 +9,56 @@ interface CustomHeaderProps {
     setView: (view: string) => void;
     setDate: (date: string) => void;
   };
+  selectedView: string;
+  selectedDate: string;
+  setSelectedView: (view: string) => void;
 }
 
-const CustomHeader = ({ calendarControls }: CustomHeaderProps) => {
-  const [currentView, setCurrentView] = useState<CalendarView>("day");
-  const [currentDate, setCurrentDate] = useState(new Date());
+const CustomHeader = ({
+  calendarControls,
+  selectedView,
+  selectedDate,
+  setSelectedView,
+}: CustomHeaderProps) => {
+  const currentDate = new Date(selectedDate);
   const [showViewDropdown, setShowViewDropdown] = useState(false);
 
-  useEffect(() => {
-    if (calendarControls) {
-      const updateDate = () => {
-        setCurrentDate(new Date());
-      };
-
-      updateDate();
-    }
-  }, [calendarControls]);
-
   const handleViewChange = (view: CalendarView) => {
-    if (calendarControls) {
-      calendarControls.setView(view);
-      setCurrentView(view);
-      setShowViewDropdown(false);
-    }
+    calendarControls.setView(view);
+    setSelectedView(view);
+    setShowViewDropdown(false);
   };
 
   const handleDateNavigation = (direction: number) => {
     if (calendarControls) {
-      const newDate = new Date(currentDate);
+      const newDate = new Date(selectedDate);
 
-      if (currentView === "week") {
+      if (selectedView === "week") {
         newDate.setDate(newDate.getDate() + direction * 7);
       } else if (
-        currentView === "month-grid" ||
-        currentView === "month-agenda"
+        selectedView === "month-grid" ||
+        selectedView === "month-agenda"
       ) {
         newDate.setMonth(newDate.getMonth() + direction);
-      } else if (currentView === "day") {
+      } else if (selectedView === "day") {
         newDate.setDate(newDate.getDate() + direction);
       }
-
-      setCurrentDate(newDate);
       calendarControls.setDate(newDate.toISOString().split("T")[0]);
     }
   };
 
   const formatDateRange = () => {
-    if (currentView === "week") {
+    if (selectedView === "week") {
       const startOfWeek = new Date(currentDate);
       startOfWeek.setDate(currentDate.getDate() - currentDate.getDay());
       const endOfWeek = new Date(startOfWeek);
       endOfWeek.setDate(startOfWeek.getDate() + 6);
 
       return `${startOfWeek.getDate()} - ${endOfWeek.getDate()} ${startOfWeek.toLocaleDateString("en-US", { month: "long" })}`;
-    } else if (currentView === "month-grid" || currentView === "month-agenda") {
+    } else if (
+      selectedView === "month-grid" ||
+      selectedView === "month-agenda"
+    ) {
       return currentDate.toLocaleDateString("en-US", {
         month: "long",
       });
@@ -102,7 +98,7 @@ const CustomHeader = ({ calendarControls }: CustomHeaderProps) => {
             type="button"
             onClick={() => setShowViewDropdown(!showViewDropdown)}
             className="flex cursor-pointer items-center gap-1 rounded-3xl !border !border-[#F3F3F7] !bg-white px-4 py-2 text-xs leading-[100%] !font-medium !text-[#2B2C2F] transition-colors duration-200 hover:!bg-gray-50">
-            {viewOptions.find((option) => option.value === currentView)
+            {viewOptions.find((option) => option.value === selectedView)
               ?.label || "Week view"}
             <ChevronDown
               size={18}
