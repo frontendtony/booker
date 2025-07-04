@@ -131,3 +131,53 @@
   --font-geist: var(--font-geist), system-ui, sans-serif;
   --font-geist-momo: var(--font-geist-mono), sans-serif;
 }
+
+@layer components {
+  .custom-class {
+    @apply truncate;
+  }
+  .custom-blockout {
+    @apply truncate line-through;
+  }
+}
+
+.sx__calendar {
+  border: none !important;
+}
+
+.sx__week-grid__hour-text {
+  color: #bec0cd !important;
+  font-weight: 500 !important;
+  font-size: 12px !important;
+  line-height: 100% !important;
+  letter-spacing: -2% !important;
+}
+
+.sx__week-grid_day-name {
+  color: #bec0cd !important;
+  font-weight: 500 !important;
+  font-size: 10px !important;
+  line-height: 100% !important;
+  letter-spacing: -2% !important;
+}
+
+.sx__week-grid__date.sx__week-grid__date--is-today .sx__week-grid__day-name {
+  color: #ff3f14 !important;
+  font-weight: 500 !important;
+}
+
+.sx__week-grid__date.sx__week-grid__date--is-today .sx__week-grid__date-number {
+  background-color: #ff3f14 !important;
+}
+
+.sx__is-today {
+  background-color: #ff3f14 !important;
+}
+
+.sx__date-picker__day--selected {
+  background-color: #ff3f14 !important;
+}
+
+.sx__date-picker__day--selected button:hover {
+  background-color: #ff6b47 !important;
+}
