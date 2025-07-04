@@ -1,6 +1,40 @@
-import AppointmentList from "./appointmentList";
+"use client";
+
+import { useEffect, useState } from "react";
+import AppointmentList from "./AppointmentList";
 
 const CentreLayoutPopulated = () => {
+  const [currentTime, setCurrentTime] = useState("");
+
+  useEffect(() => {
+    const updateTime = () => {
+      const now = new Date();
+      const timeString = now.toLocaleTimeString("en-US", {
+        hour: "2-digit",
+        minute: "2-digit",
+        hour12: true,
+      });
+      setCurrentTime(timeString);
+    };
+
+    updateTime();
+    const interval = setInterval(updateTime, 1000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  const today = new Date();
+  const tomorrow = new Date();
+  tomorrow.setDate(tomorrow.getDate() + 1);
+
+  const todayDay = today.getDate();
+  const todayMonth = today.toLocaleString("default", { month: "short" });
+  const todayYear = today.getFullYear();
+
+  const tomorrowDay = tomorrow.getDate();
+  const tomorrowMonth = tomorrow.toLocaleString("default", { month: "short" });
+  const tomorrowYear = tomorrow.getFullYear();
+
   const upcomingAppointments = [
     {
       id: 1,
@@ -125,11 +159,12 @@ const CentreLayoutPopulated = () => {
     <div>
       <div className="flex items-center justify-between">
         <h1 className="font-geist text-2xl leading-[100%] font-bold">
-          Today 15 Feb <span className="font-normal">2025</span>
+          Today {todayDay} {todayMonth}{" "}
+          <span className="font-normal">{todayYear}</span>
         </h1>
 
         <span className="font-geist-momo rounded-xl bg-white p-1.5 text-xs leading-[100%] font-medium">
-          {"09:32 AM"}
+          {currentTime}
         </span>
       </div>
 
@@ -194,7 +229,7 @@ const CentreLayoutPopulated = () => {
         <h2 className="font-geist mt-10 text-xl leading-[100%] font-bold">
           Tomorrow{" "}
           <span className="ml-2 text-sm font-medium text-[#7C7E87]">
-            16 Feb, 2025
+            {tomorrowDay} {tomorrowMonth}, {tomorrowYear}
           </span>
         </h2>
         {tomorrowAppointments.map((appointment) => (

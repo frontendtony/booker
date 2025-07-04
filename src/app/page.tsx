@@ -1,6 +1,6 @@
-import CentreLayoutPopulated from "@/components/centreLayoutPopulated";
 import LargeCalendarPopulated from "@/components/LargeCalendarPopulated";
-import Sidebar from "@/components/sidebar";
+import CentreLayoutPopulated from "@/components/CentreLayoutPopulated";
+import Sidebar from "@/components/Sidebar";
 
 const Home = () => {
   return (

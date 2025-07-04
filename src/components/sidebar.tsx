@@ -3,8 +3,8 @@
 import logo from "../assets/logo.png";
 import qr_code from "../assets/qr_code.png";
 import Image from "next/image";
-import { Calendar } from "./ui/calendar";
-import { Button } from "./ui/button";
+import { Calendar } from "./ui/Calendar";
+import { Button } from "./ui/Button";
 import {
   Bolt,
   ChevronDown,
