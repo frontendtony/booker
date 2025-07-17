@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import AppointmentList from "./AppointmentList";
 
-const CentreLayoutPopulated = () => {
+const AppointmentsPopulatedState = () => {
   const [currentTime, setCurrentTime] = useState("");
 
   useEffect(() => {
@@ -168,7 +168,7 @@ const CentreLayoutPopulated = () => {
         </span>
       </div>
 
-      <div className="mt-10 flex gap-6 items-center justify-between">
+      <div className="mt-10 flex items-center justify-between gap-6">
         <div className="font-geist flex h-[93px] w-[227px] flex-col justify-between rounded-xl bg-white px-3 py-2.5">
           <span className="text-2xl leading-[100%] font-bold">24</span>
           <p className="text-sm leading-[100%] font-medium">
@@ -247,4 +247,4 @@ const CentreLayoutPopulated = () => {
   );
 };
 
-export default CentreLayoutPopulated;
+export default AppointmentsPopulatedState;
