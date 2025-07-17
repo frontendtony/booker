@@ -11,7 +11,7 @@ import { createEventsServicePlugin } from "@schedule-x/events-service";
 import { createCalendarControlsPlugin } from "@schedule-x/calendar-controls";
 
 import "@schedule-x/theme-default/dist/index.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import CustomHeader from "./CustomHeader";
 
 function CalendarWithAppointments() {
@@ -19,7 +19,7 @@ function CalendarWithAppointments() {
   const calendarControls = useState(() => createCalendarControlsPlugin())[0];
 
   const [currentDate, setCurrentDate] = useState(new Date());
-  const [currentView, setCurrentView] = useState("day");
+  const [currentView, setCurrentView] = useState("");
 
   const calendar = useNextCalendarApp({
     firstDayOfWeek: 0,
@@ -564,6 +564,19 @@ function CalendarWithAppointments() {
     selectedDate: currentDate.toISOString().split("T")[0],
   });
 
+  useEffect(() => {
+    const checkViewChange = () => {
+      const actualView = calendarControls.getView();
+      if (actualView !== currentView) {
+        setCurrentView(actualView);
+      }
+    };
+
+    const interval = setInterval(checkViewChange, 100);
+
+    return () => clearInterval(interval);
+  }, [calendarControls, currentView]);
+
   return (
     <div className="font-geist">
       <ScheduleXCalendar
@@ -575,7 +588,6 @@ function CalendarWithAppointments() {
                 calendarControls={calendarControls}
                 selectedDate={currentDate.toISOString().split("T")[0]}
                 selectedView={currentView}
-                setSelectedView={setCurrentView}
               />
             );
           },

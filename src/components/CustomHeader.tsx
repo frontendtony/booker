@@ -9,23 +9,20 @@ interface CustomHeaderProps {
     setView: (view: string) => void;
     setDate: (date: string) => void;
   };
-  selectedView: string;
   selectedDate: string;
-  setSelectedView: (view: string) => void;
+  selectedView: string;
 }
 
 const CustomHeader = ({
   calendarControls,
-  selectedView,
   selectedDate,
-  setSelectedView,
+  selectedView,
 }: CustomHeaderProps) => {
   const currentDate = new Date(selectedDate);
   const [showViewDropdown, setShowViewDropdown] = useState(false);
 
   const handleViewChange = (view: CalendarView) => {
     calendarControls.setView(view);
-    setSelectedView(view);
     setShowViewDropdown(false);
   };
 
@@ -98,8 +95,7 @@ const CustomHeader = ({
             type="button"
             onClick={() => setShowViewDropdown(!showViewDropdown)}
             className="flex cursor-pointer items-center gap-1 rounded-3xl !border !border-[#F3F3F7] !bg-white px-4 py-2 text-xs leading-[100%] !font-medium !text-[#2B2C2F] transition-colors duration-200 hover:!bg-gray-50">
-            {viewOptions.find((option) => option.value === selectedView)
-              ?.label || "Week view"}
+            {viewOptions.find((option) => option.value === selectedView)?.label}
             <ChevronDown
               size={18}
               className={`transition-transform duration-200 ${showViewDropdown ? "rotate-180" : ""}`}
