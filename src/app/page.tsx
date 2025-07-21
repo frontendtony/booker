@@ -1,6 +1,6 @@
 import CalendarWithAppointments from "@/components/CalendarWithAppointments";
 import Sidebar from "@/components/Sidebar";
-import AppointmentsPopulatedState from "@/components/appointments/AppointmentsPopulatedState";
+import Appointments from "@/components/appointments";
 
 const Home = () => {
   return (
@@ -10,7 +10,7 @@ const Home = () => {
       </div>
 
       <div className="hide-scrollbar overflow-y-auto bg-[#FAFAFC] p-6">
-        <AppointmentsPopulatedState />
+        <Appointments />
       </div>
 
       <div className="hide-scrollbar overflow-y-auto bg-white p-4">

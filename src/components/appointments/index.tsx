@@ -1,9 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import AppointmentList from "./AppointmentList";
+import AppointmentList from "./Appointment";
 
-const AppointmentsPopulatedState = () => {
+const Appointments = () => {
   const [currentTime, setCurrentTime] = useState("");
 
   useEffect(() => {
@@ -247,4 +247,4 @@ const AppointmentsPopulatedState = () => {
   );
 };
 
-export default AppointmentsPopulatedState;
+export default Appointments;
