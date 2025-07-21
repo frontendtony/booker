@@ -1,9 +1,9 @@
 import Image from "next/image";
 import porch from "../assets/porch.png";
-import { Button } from "./ui/Button";
+import { Button } from "../ui/Button";
 import { Plus } from "lucide-react";
 
-const CentreLayout = () => {
+const AppointmentsEmptyState = () => {
   return (
     <div>
       <div className="flex items-center justify-between">
@@ -41,4 +41,4 @@ const CentreLayout = () => {
   );
 };
 
-export default CentreLayout;
+export default AppointmentsEmptyState;

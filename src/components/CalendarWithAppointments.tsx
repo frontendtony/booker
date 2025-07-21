@@ -14,7 +14,7 @@ import "@schedule-x/theme-default/dist/index.css";
 import { useState } from "react";
 import CustomHeader from "./CustomHeader";
 
-function LargeCalendarPopulated() {
+function CalendarWithAppointments() {
   const eventsService = useState(() => createEventsServicePlugin())[0];
   const calendarControls = useState(() => createCalendarControlsPlugin())[0];
 
@@ -585,4 +585,4 @@ function LargeCalendarPopulated() {
   );
 }
 
-export default LargeCalendarPopulated;
+export default CalendarWithAppointments;

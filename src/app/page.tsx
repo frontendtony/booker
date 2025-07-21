@@ -1,6 +1,6 @@
-import LargeCalendarPopulated from "@/components/LargeCalendarPopulated";
-import CentreLayoutPopulated from "@/components/CentreLayoutPopulated";
+import CalendarWithAppointments from "@/components/CalendarWithAppointments";
 import Sidebar from "@/components/Sidebar";
+import Appointments from "@/components/appointments";
 
 const Home = () => {
   return (
@@ -10,11 +10,11 @@ const Home = () => {
       </div>
 
       <div className="hide-scrollbar overflow-y-auto bg-[#FAFAFC] p-6">
-        <CentreLayoutPopulated />
+        <Appointments />
       </div>
 
       <div className="hide-scrollbar overflow-y-auto bg-white p-4">
-        <LargeCalendarPopulated />
+        <CalendarWithAppointments />
       </div>
     </div>
   );
